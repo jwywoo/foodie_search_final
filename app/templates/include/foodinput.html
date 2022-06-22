@@ -1,0 +1,84 @@
+<form class="submit-search" action="{% url 'food:searching-food'%}" method="POST">
+    {% csrf_token %}
+    <!--First row of feature input-->
+    <div class="row">
+        <div class="form-group">
+            <label for="country">Country</label>
+            <select type="text" id="country" name="country" class = "form-control">
+                <option selected value="UD">Not sure</option>
+                <option value="KR">Korea</option>
+                <option value="JP">Japan</option>
+                <option value="NA">None of the above</option>
+            </select>
+			<br>
+        </div>
+        <div class="form-group">
+            <label for="color">Color</label>
+            <select type="text" id="color" name="color" class = "form-control">
+                <option selected value="UD">Not sure</option>
+                <option value="YL">Yellow</option>
+                <option value="RD">Red</option>
+                <option value="BL">Black</option>
+                <option value="BR">Brown</option>
+                <option value="NA">None of the above</option>
+            </select>
+			<br>
+        </div>
+        <div class="form-group">
+            <label for="taste">Taste</label>
+            <select type="text" id="taste" name="taste" class = "form-control">
+                <option selected value="UD">Not sure</option>
+                <option value="SW">Sweet</option>
+                <option value="SC">Spicy</option>
+                <option value="SR">Sour</option>
+                <option value="SL">Salty</option>
+                <option value="BT">Bitter</option>
+                <option value="NA">None of the above</option>
+            </select>
+			<br>
+        </div>
+    </div>
+    <!--Second row of feature input-->
+    <div class="row">
+        <div class="form-group">
+            <label for="protein">Protein</label>
+            <select type="text" id="protein" name="protein" class = "form-control">
+                <option selected value="UD">Not sure</option>
+                <option value="BF">Beef</option>
+                <option value="PR">Pork</option>
+                <option value="CK">Chicken</option>
+                <option value="FS">Fish</option>
+                <option value="SF">Shell fish</option>
+                <option value="VG">Vegetarian</option>
+                <option value="NA">No meat</option>
+            </select>
+			<br>
+        </div>
+        <div class="form-group">
+            <label for="type">Type</label>
+            <select type="text" id="type" name="type" class = "form-control">
+                <option selected value="UD">Not sure</option>
+                <option value="BD">Boiled</option>
+                <option value="FR">Fried</option>
+                <option value="ST">Steamed</option>
+                <option value="BE">Baked</option>
+                <option value="BQ">Raw</option>
+                <option value="RW">Barbeque</option>
+                <option value="NA">None of the above</option>
+            </select>
+			<br>
+        </div>
+        <div class="form-group">
+            <label for="carbohydrate">Carbohydrate</label>
+            <select type="text" id="carbohydrate" name="carbohydrate" class = "form-control">
+                <option selected value="UD">Not sure</option>
+                <option value="ND">Noodles</option>
+                <option value="RE">Rice</option>
+                <option value="NA">None of the above</option>
+            </select>
+			<br>
+        </div>
+    </div>
+    <input type="submit" value="Search" style="margin: 0 auto; display: block;"/>
+	<br>
+</form>

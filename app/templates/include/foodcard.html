@@ -1,0 +1,22 @@
+<div class="card shadow-sm">
+    <img src="{{ food.food_image.url }}" class="bd-placeholder-img card-img-top" width="100%" height="225">
+<!--    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"-->
+<!--         role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">-->
+        <!--food name-->
+        <title>{{ food.original_name }}</title>
+        <!--food image-->
+        <rect width="100%" height="100%" fill="#55595c"></rect>
+    </svg>
+    <div class="card-body">
+        <!--food text-->
+        <p class="card-text">{{ food.english_name }}/ {{ food.original_name }}</p>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+                <form action="{% url 'food:food-detail' pk=food.pk %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-sm btn-outline-secondary">View</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

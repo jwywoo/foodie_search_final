@@ -1,0 +1,19 @@
+{% extends 'common_css.html'%}
+{% block content %}
+<div class="row">
+    <div class="col-sm">
+        {% include 'include/foodinput.html' %}
+    </div>
+    <div class="col-sm">
+        {% if foods %}
+        {% for food in foods %}
+            {% include 'include/foodcard.html' %}
+        {% endfor %}
+        {% else %}
+        {% endif %}
+        {% if warning %}
+        <h3>{{ warning }}</h3>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

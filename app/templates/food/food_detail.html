@@ -1,0 +1,23 @@
+{% extends 'common_css.html'%}
+{% block content %}
+<div class="card shadow" style="width: 100%;">
+    <img class="card-img-top" src="{{ food.food_image.url }}" alt="Card image cap">
+    <div class="card-body">
+        <h3 class="card-title">{{ food.english_name }}/{{ food.original_name }}</h3>
+        <p class="card-text">{{ food.food_description }}</p>
+    </div>
+    <div class="card-body">
+        {% if user.is_authenticated %}
+        <div class="btn-group">
+            <form action="{% url 'relation:add-favorite-food' pk=food.pk %}" method="POST">
+                {% csrf_token %}
+                <h6>{{ message }}</h6>
+                <button type="submit" class="btn btn-sm btn-outline-secondary">Add to favorites</button>
+            </form>
+        </div>
+        {% else %}
+        <a href="{% url 'user:login' %}" class="btn btn-sm btn-outline-secondary">Login to favorites</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
